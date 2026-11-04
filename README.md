@@ -50,7 +50,7 @@ Reproduce with `python train.py --evaluate` (requires the dataset, see below).
 Python 3.9 – 3.12 (tested with 3.11).
 
 ```bash
-git clone https://github.com/<your-user>/ergonomie-4.0.git
+git clone https://github.com/ayoub-elkhader/ergonomie-4.0.git
 cd ergonomie-4.0
 python -m venv .venv
 .venv\Scripts\activate          # Windows  (Linux/macOS: source .venv/bin/activate)
