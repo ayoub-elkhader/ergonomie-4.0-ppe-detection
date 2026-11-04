@@ -59,7 +59,8 @@ if source == settings.IMAGE:
         col1.image(image, caption="Uploaded image")
 
         if st.sidebar.button("Analyse image"):
-            frame = np.array(image)[:, :, ::-1].copy()  # RGB -> BGR
+            # RGB -> BGR, downscaled so boxes, labels and posture bars stay readable
+            frame = helper.fit_frame(np.array(image)[:, :, ::-1].copy(), max_side=1280)
             counts, violations = {}, []
             if use_ppe:
                 result = model.predict(frame, conf=confidence, verbose=False)[0]

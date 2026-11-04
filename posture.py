@@ -108,6 +108,13 @@ def annotate_posture(frame_bgr, pose, ergonomy):
         )
     ergonomy.update_joints(results.pose_world_landmarks)
 
+    if results.pose_world_landmarks is None:
+        # Don't draw misleading "0 deg" bars when nobody is detected.
+        cv2.rectangle(image, (5, 5), (300, 32), (255, 255, 255), -1)
+        cv2.putText(image, "Posture: no person detected", (12, 25),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 2)
+        return image
+
     rows = [
         ("trunk", ergonomy.trunk_angle, ergonomy.get_trunk_color()),
         ("neck", ergonomy.neck_angle, ergonomy.get_neck_color()),

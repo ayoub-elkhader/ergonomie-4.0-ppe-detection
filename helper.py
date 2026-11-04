@@ -37,7 +37,7 @@ def show_compliance(container, violations, counts):
         container.success("PPE compliant: no violation detected.")
 
 
-def _fit(frame, max_side):
+def fit_frame(frame, max_side):
     """Downscale a frame so its longest side is max_side, keeping the aspect ratio."""
     h, w = frame.shape[:2]
     scale = max_side / max(h, w)
@@ -59,7 +59,7 @@ class FrameProcessor:
         self.ergonomy = Ergonomy() if use_posture else None
 
     def __call__(self, frame):
-        frame = _fit(frame, max_side=720)
+        frame = fit_frame(frame, max_side=720)
         counts, violations = Counter(), []
         if self.use_ppe:
             if self.tracker:
