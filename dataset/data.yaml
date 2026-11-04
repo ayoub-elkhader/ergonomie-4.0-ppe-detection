@@ -1,0 +1,20 @@
+# soudage_ia v2 - PPE in a welding workshop (exported from Roboflow, YOLOv8 format)
+# Paths are relative to this file's folder. Use an absolute path to this file
+# when training (train.py does it for you).
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 11
+names:
+  - avec_casque           # helmet worn
+  - avec_gants            # gloves worn
+  - chaussure_adequat     # suitable shoes
+  - chaussure_inadequat   # unsuitable shoes
+  - presence_accessoires  # accessories (jewellery, watch...)
+  - presence_cheveux      # hair not covered
+  - sans_casque           # no helmet
+  - sans_gants            # no gloves
+  - sans_tablier          # no apron
+  - tablier_ferme         # apron closed
+  - tablier_ouvert        # apron open

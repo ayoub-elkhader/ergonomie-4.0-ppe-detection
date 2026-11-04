@@ -1,0 +1,9 @@
+# Python 3.9 - 3.12 (tested with 3.11)
+ultralytics>=8.1,<9
+streamlit>=1.30
+# 0.10.14 is the last release that ships the mp.solutions.pose API used here
+mediapipe==0.10.14
+opencv-python>=4.8
+numpy>=1.23,<2
+pandas>=1.5
+Pillow>=9.5
