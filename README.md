@@ -11,12 +11,27 @@ Academic project — ENSAM Meknès (Université Moulay Ismail), Industrial Engin
 
 - **PPE detection** with a custom **YOLOv8s** model trained on our own photos of the
   ENSAM welding workshop (11 classes: helmet, gloves, apron, shoes, accessories, hair).
-- **Compliance alert**: the app flags every rule that is not respected
-  (no helmet, no gloves, open apron, unsuitable shoes…).
-- **Posture evaluation** with **MediaPipe Pose**: trunk, neck and leg angles,
-  coloured green / yellow / red according to ergonomic thresholds.
+- **PPE compliance checklist**: each required item (helmet, gloves, apron, safety
+  shoes) is reported as ✅ worn, ❌ missing / badly worn, or ❔ not visible.
+  The operator is declared compliant only when every item is confirmed — an item the
+  camera cannot see is never assumed to be worn. Loose hair and accessories are
+  flagged as extra hazards.
+- **Posture evaluation** with **MediaPipe Pose**: trunk, neck and knee flexion,
+  each rated with RULA-inspired thresholds, plus an overall verdict.
 - Sources: **image upload, video files, webcam, RTSP camera**.
 - Optional object **tracking** (ByteTrack / BoT-SORT) on video streams.
+
+### Posture rating
+
+| Segment | 🟢 OK | 🟠 Moderate | 🔴 High risk |
+|---------|------:|------------:|-------------:|
+| Trunk flexion | ≤ 20° | 20–60° | > 60° |
+| Neck flexion  | ≤ 10° | 10–20° | > 20° |
+| Knee flexion *(information only)* | ≤ 30° | 30–60° | > 60° |
+
+The verdict (*acceptable* / *to improve* / *risky*) is the worst of trunk and neck.
+Knee flexion is shown for information only, because a seated operator naturally
+bends the knees ~90° without any risk.
 
 ## Results
 
@@ -62,7 +77,7 @@ The app opens at <http://localhost:8501>.
 
 1. Choose what to analyse: **PPE detection**, **Posture**, or both.
 2. Pick a source: upload an image, choose a video from `videos/`, or start the webcam.
-3. Adjust the confidence threshold if needed (default 0.40).
+3. Adjust the detection confidence if needed (default 0.50).
 
 Posture can also run in a plain OpenCV window: `python posture.py` (Esc to quit).
 

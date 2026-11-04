@@ -41,13 +41,26 @@ DETECTION_MODEL = MODEL_DIR / "best.pt"
 WEBCAM_PATH = 0
 
 # -------------------------------------------------------------------- PPE
-# Classes of the soudage_ia dataset that mean a safety rule is NOT respected.
-NON_COMPLIANT_CLASSES = {
-    "sans_casque": "Welding helmet missing",
-    "sans_gants": "Gloves missing",
-    "sans_tablier": "Apron missing",
-    "tablier_ouvert": "Apron open",
-    "chaussure_inadequat": "Unsuitable shoes",
+# Required equipment: (label, classes proving it is worn, classes proving a violation).
+# An item with neither kind of detection is reported as "not visible".
+PPE_CHECKLIST = [
+    ("Welding helmet", ["avec_casque"], ["sans_casque"]),
+    ("Gloves", ["avec_gants"], ["sans_gants"]),
+    ("Apron", ["tablier_ferme"], ["sans_tablier", "tablier_ouvert"]),
+    ("Safety shoes", ["chaussure_adequat"], ["chaussure_inadequat"]),
+]
+
+# Extra hazards: detected = violation, not detected = fine.
+HAZARD_CLASSES = {
     "presence_accessoires": "Accessories worn (jewellery, watch...)",
     "presence_cheveux": "Hair not covered",
+}
+
+# Human-readable messages for violation classes
+VIOLATION_LABELS = {
+    "sans_casque": "no helmet",
+    "sans_gants": "no gloves",
+    "sans_tablier": "no apron",
+    "tablier_ouvert": "apron open",
+    "chaussure_inadequat": "unsuitable shoes",
 }
