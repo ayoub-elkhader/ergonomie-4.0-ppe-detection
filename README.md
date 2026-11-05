@@ -140,8 +140,8 @@ Verified on Windows 10 with Python 3.11 (see [docs/VERIFICATION.md](docs/VERIFIC
 for the exact versions and the clean-environment install test).
 
 ```bash
-git clone https://github.com/ayoub-elkhader/ergonomie-4.0.git
-cd ergonomie-4.0
+git clone https://github.com/ayoub-elkhader/ergonomie-4.0-ppe-detection.git
+cd ergonomie-4.0-ppe-detection
 python -m venv .venv
 .venv\Scripts\activate          # Windows  (Linux/macOS: source .venv/bin/activate)
 pip install -r requirements.txt
