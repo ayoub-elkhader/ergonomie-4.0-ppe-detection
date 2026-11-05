@@ -1,9 +1,12 @@
 # Ergonomie 4.0
 
-**Prototype de vision pour la détection d'EPI et l'exploration d'indicateurs posturaux en atelier de soudage.**
-*(Vision prototype for PPE detection and exploratory posture indicators in a welding workshop.)*
+**Computer-vision prototype for PPE detection and exploratory posture indicators in a welding workshop.**
 
-Academic project — ENSAM Meknès (Université Moulay Ismail), Industrial Engineering.
+Academic project — ENSAM Meknès (Moulay Ismail University), Industrial Engineering.
+
+> The dataset class names are in French, as annotated (e.g. `avec_casque` = helmet
+> worn, `sans_gants` = no gloves); their English meaning is given in
+> [dataset/README.md](dataset/README.md).
 
 ![Interface](docs/interface.png)
 
