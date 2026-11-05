@@ -5,19 +5,24 @@ __pycache__/
 venv/
 env/
 .env
+.pytest_cache/
 
 # Training / evaluation outputs
 runs/
 *.cache
 
-# Dataset images (see dataset/README.md) - keep only the config
+# Dataset images (photos of people, private) - keep only config + README
 dataset/train/
 dataset/valid/
 dataset/test/
 
-# Extra checkpoints (only weights/best.pt is versioned)
+# Evaluation example images show people: local only
+reports/evaluation/*/examples/
+
+# Model weights: only the two used by the app are versioned
 weights/*.pt
 !weights/best.pt
+!weights/yolov8n.pt
 
 # Editors / OS
 .vscode/

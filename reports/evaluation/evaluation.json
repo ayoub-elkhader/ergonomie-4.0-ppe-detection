@@ -1,0 +1,1672 @@
+{
+  "generated": "2026-11-04T23:34:46+00:00",
+  "args": [
+    "--splits",
+    "val",
+    "test",
+    "--device",
+    "cpu"
+  ],
+  "environment": {
+    "python": "3.11.5",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 61 Stepping 4, GenuineIntel",
+    "ultralytics": "8.4.202",
+    "torch": "2.15.0+cpu",
+    "opencv": "4.11.0",
+    "numpy": "1.26.4",
+    "cuda": false,
+    "ram_gb": 7.7,
+    "cpu_count": 4
+  },
+  "model": {
+    "path": "weights/best.pt",
+    "md5": "297aa6322c8b0ae5c109ecf71e5ce791",
+    "saved": "2024-01-31T18:11:08.355460",
+    "ultralytics_version": "8.0.20",
+    "train_args": {
+      "model": "yolov8s.yaml",
+      "pretrained": false,
+      "data": "/content/datasets/soudage_ia-2/data.yaml",
+      "epochs": 200,
+      "imgsz": 640,
+      "batch": 16,
+      "seed": 0,
+      "optimizer": "SGD",
+      "patience": 0
+    }
+  },
+  "data": {
+    "yaml": "dataset/data.yaml",
+    "yaml_md5": "abfdb2bbcebfcce41307db28cc81d982",
+    "splits": {
+      "val": {
+        "fingerprint": "2e8757cc9f86f8c3b58c509d5dfbc846",
+        "images": 93
+      },
+      "test": {
+        "fingerprint": "90ff5d49d1ff9474217cff6211f959c5",
+        "images": 47
+      }
+    }
+  },
+  "conf": 0.5,
+  "classes": [
+    "avec_casque",
+    "avec_gants",
+    "chaussure_adequat",
+    "chaussure_inadequat",
+    "presence_accessoires",
+    "presence_cheveux",
+    "sans_casque",
+    "sans_gants",
+    "sans_tablier",
+    "tablier_ferme",
+    "tablier_ouvert"
+  ],
+  "splits": {
+    "val": {
+      "images": 93,
+      "metrics": {
+        "precision": 0.7066822982470186,
+        "recall": 0.7584312427036355,
+        "mAP50": 0.7706410659338772,
+        "mAP50_95": 0.37157145875791964
+      },
+      "per_class": {
+        "avec_casque": {
+          "precision": 0.8840692123899037,
+          "recall": 0.9402985074626866,
+          "mAP50": 0.942718785908927,
+          "mAP50_95": 0.49826629793361976
+        },
+        "avec_gants": {
+          "precision": 0.7127989587518394,
+          "recall": 0.7941176470588235,
+          "mAP50": 0.7474244700123558,
+          "mAP50_95": 0.30635767068305636
+        },
+        "chaussure_adequat": {
+          "precision": 0.5824668666966923,
+          "recall": 0.7102071718637208,
+          "mAP50": 0.6336658727352456,
+          "mAP50_95": 0.34535399023140584
+        },
+        "chaussure_inadequat": {
+          "precision": 0.8385909312207237,
+          "recall": 0.8,
+          "mAP50": 0.9537412587412586,
+          "mAP50_95": 0.4310086913086913
+        },
+        "presence_accessoires": {
+          "precision": 0.30505363024184134,
+          "recall": 0.5,
+          "mAP50": 0.495,
+          "mAP50_95": 0.297
+        },
+        "presence_cheveux": {
+          "precision": 0.5323088482057119,
+          "recall": 0.38359154165332965,
+          "mAP50": 0.44437090783045147,
+          "mAP50_95": 0.16458512319463042
+        },
+        "sans_casque": {
+          "precision": 0.930720310083789,
+          "recall": 0.8957481964672771,
+          "mAP50": 0.9092371995820272,
+          "mAP50_95": 0.485975812456644
+        },
+        "sans_gants": {
+          "precision": 0.7413183770933797,
+          "recall": 0.8823529411764706,
+          "mAP50": 0.8780481283422461,
+          "mAP50_95": 0.4458858670741024
+        },
+        "sans_tablier": {
+          "precision": 1.0,
+          "recall": 0.9284945204159114,
+          "mAP50": 0.995,
+          "mAP50_95": 0.43183333333333335
+        },
+        "tablier_ferme": {
+          "precision": 0.5686179330428034,
+          "recall": 0.7079331436417704,
+          "mAP50": 0.6824455017205365,
+          "mAP50_95": 0.2976249044772764
+        },
+        "tablier_ouvert": {
+          "precision": 0.6775602129905192,
+          "recall": 0.8,
+          "mAP50": 0.7953996003996004,
+          "mAP50_95": 0.38339435564435564
+        }
+      },
+      "support_instances": {
+        "sans_casque": 30,
+        "avec_gants": 102,
+        "chaussure_adequat": 55,
+        "avec_casque": 67,
+        "tablier_ferme": 54,
+        "presence_accessoires": 2,
+        "sans_gants": 17,
+        "tablier_ouvert": 10,
+        "presence_cheveux": 9,
+        "chaussure_inadequat": 10,
+        "sans_tablier": 3
+      },
+      "support_images": {
+        "avec_gants": 76,
+        "chaussure_adequat": 40,
+        "sans_casque": 26,
+        "avec_casque": 65,
+        "tablier_ferme": 49,
+        "presence_accessoires": 2,
+        "sans_gants": 11,
+        "tablier_ouvert": 10,
+        "presence_cheveux": 5,
+        "chaussure_inadequat": 5,
+        "sans_tablier": 3
+      },
+      "at_app_threshold": {
+        "avec_casque": {
+          "tp": 62,
+          "fp": 9,
+          "fn": 5,
+          "precision": 0.8732394366197183,
+          "recall": 0.9253731343283582
+        },
+        "avec_gants": {
+          "tp": 82,
+          "fp": 20,
+          "fn": 20,
+          "precision": 0.803921568627451,
+          "recall": 0.803921568627451
+        },
+        "chaussure_adequat": {
+          "tp": 31,
+          "fp": 17,
+          "fn": 24,
+          "precision": 0.6458333333333334,
+          "recall": 0.5636363636363636
+        },
+        "chaussure_inadequat": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 4,
+          "precision": 1.0,
+          "recall": 0.6
+        },
+        "presence_accessoires": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.5,
+          "recall": 0.5
+        },
+        "presence_cheveux": {
+          "tp": 2,
+          "fp": 3,
+          "fn": 7,
+          "precision": 0.4,
+          "recall": 0.2222222222222222
+        },
+        "sans_casque": {
+          "tp": 26,
+          "fp": 2,
+          "fn": 4,
+          "precision": 0.9285714285714286,
+          "recall": 0.8666666666666667
+        },
+        "sans_gants": {
+          "tp": 15,
+          "fp": 4,
+          "fn": 2,
+          "precision": 0.7894736842105263,
+          "recall": 0.8823529411764706
+        },
+        "sans_tablier": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.6666666666666666
+        },
+        "tablier_ferme": {
+          "tp": 33,
+          "fp": 19,
+          "fn": 21,
+          "precision": 0.6346153846153846,
+          "recall": 0.6111111111111112
+        },
+        "tablier_ouvert": {
+          "tp": 6,
+          "fp": 2,
+          "fn": 4,
+          "precision": 0.75,
+          "recall": 0.6
+        }
+      },
+      "false_positives": [
+        {
+          "image": "IMG_3451_jpg.rf.9871c59d977d54e16eb74b00d1c2b389.jpg",
+          "class": "tablier_ferme",
+          "score": 0.917
+        },
+        {
+          "image": "IMG_3450_jpg.rf.a41010b49809e34f649a23ee3e6097e6.jpg",
+          "class": "tablier_ferme",
+          "score": 0.888
+        },
+        {
+          "image": "IMG_3401_jpg.rf.e841421e896d8b5c20eedd341d7ffa87.jpg",
+          "class": "avec_gants",
+          "score": 0.874
+        },
+        {
+          "image": "IMG_3654_jpg.rf.7d849e80ab73e90a0a390c8824de5f6a.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.822
+        },
+        {
+          "image": "IMG_3406_jpg.rf.813fb5e903f6024ffa0ed11496a051ef.jpg",
+          "class": "avec_gants",
+          "score": 0.818
+        },
+        {
+          "image": "IMG_3409_jpg.rf.654d6bef645fdb11f8388c04a71d0937.jpg",
+          "class": "avec_gants",
+          "score": 0.799
+        },
+        {
+          "image": "IMG_3772_jpg.rf.7708ae0ce6bd46a8be97e30c09d0a418.jpg",
+          "class": "tablier_ferme",
+          "score": 0.791
+        },
+        {
+          "image": "IMG_3375_jpg.rf.73f06ba43fcbac47c50f4aa551053a13.jpg",
+          "class": "tablier_ferme",
+          "score": 0.781
+        },
+        {
+          "image": "IMG_3551_jpg.rf.d69623200450a055f92cc977ef8a1593.jpg",
+          "class": "sans_gants",
+          "score": 0.776
+        },
+        {
+          "image": "IMG_3326_jpg.rf.3e8dfd73fc8b1937fe5730ce2a1fdb04.jpg",
+          "class": "tablier_ferme",
+          "score": 0.77
+        },
+        {
+          "image": "IMG_3343_jpg.rf.9012113313504da459e6510d990a9d52.jpg",
+          "class": "tablier_ferme",
+          "score": 0.767
+        },
+        {
+          "image": "IMG_3702_jpg.rf.2669d5522854e3e4362b555dd8e68d9b.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.755
+        },
+        {
+          "image": "IMG_3414_jpg.rf.b05137c9cf1df6d83eb6713c24d343a4.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.75
+        },
+        {
+          "image": "IMG_3356_jpg.rf.51c3b6643bd378933bde3f2ee96fa39c.jpg",
+          "class": "avec_gants",
+          "score": 0.745
+        },
+        {
+          "image": "IMG_3527_jpg.rf.49d22a1483b2e9b1e8156a0bd8a7f151.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.74
+        },
+        {
+          "image": "IMG_3642_jpg.rf.1b5847221c35ea7e098a999abde9516f.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.736
+        },
+        {
+          "image": "IMG_3654_jpg.rf.7d849e80ab73e90a0a390c8824de5f6a.jpg",
+          "class": "avec_casque",
+          "score": 0.736
+        },
+        {
+          "image": "IMG_3353_jpg.rf.9382b544d141a80ceef35247f6f8e021.jpg",
+          "class": "avec_casque",
+          "score": 0.735
+        },
+        {
+          "image": "IMG_3666_jpg.rf.afd43b60c42ce4836a9fc90a2ca16f38.jpg",
+          "class": "avec_gants",
+          "score": 0.735
+        },
+        {
+          "image": "IMG_3361_jpg.rf.822711a3dfe842eb25dca810b3f72c2a.jpg",
+          "class": "avec_casque",
+          "score": 0.73
+        },
+        {
+          "image": "IMG_3354_jpg.rf.b84a6e6747648aa1c385e2630fab65ae.jpg",
+          "class": "avec_casque",
+          "score": 0.73
+        },
+        {
+          "image": "IMG_3760_jpg.rf.58648ae3a167901842aace0466edda92.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.73
+        },
+        {
+          "image": "IMG_3410_jpg.rf.8f0ec52e83ecf388b1c37da77f6c2cdd.jpg",
+          "class": "avec_gants",
+          "score": 0.729
+        },
+        {
+          "image": "IMG_3561_jpg.rf.5f768a3fd15739c0bae481a43bcd5e3f.jpg",
+          "class": "tablier_ferme",
+          "score": 0.726
+        },
+        {
+          "image": "IMG_3673_jpg.rf.6c87d8fbecbf88675db5ff592027a1f7.jpg",
+          "class": "sans_casque",
+          "score": 0.723
+        },
+        {
+          "image": "IMG_3356_jpg.rf.51c3b6643bd378933bde3f2ee96fa39c.jpg",
+          "class": "sans_casque",
+          "score": 0.72
+        },
+        {
+          "image": "IMG_3654_jpg.rf.7d849e80ab73e90a0a390c8824de5f6a.jpg",
+          "class": "avec_gants",
+          "score": 0.716
+        },
+        {
+          "image": "IMG_3409_jpg.rf.654d6bef645fdb11f8388c04a71d0937.jpg",
+          "class": "avec_gants",
+          "score": 0.715
+        },
+        {
+          "image": "IMG_3414_jpg.rf.b05137c9cf1df6d83eb6713c24d343a4.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.714
+        },
+        {
+          "image": "IMG_3328_jpg.rf.c0d51cd1bee797d913c73fadb2581cd9.jpg",
+          "class": "tablier_ferme",
+          "score": 0.701
+        },
+        {
+          "image": "IMG_3689_jpg.rf.97281a6b53e05d167dcb1cade35eb7cc.jpg",
+          "class": "tablier_ferme",
+          "score": 0.696
+        },
+        {
+          "image": "IMG_3387_jpg.rf.c20d6c6011e964eecd5891f631eb9f69.jpg",
+          "class": "avec_gants",
+          "score": 0.694
+        },
+        {
+          "image": "IMG_3326_jpg.rf.3e8dfd73fc8b1937fe5730ce2a1fdb04.jpg",
+          "class": "avec_casque",
+          "score": 0.69
+        },
+        {
+          "image": "IMG_3762_jpg.rf.0b0ecaf4e55f93c2449b052e0a278a03.jpg",
+          "class": "avec_gants",
+          "score": 0.672
+        },
+        {
+          "image": "IMG_3406_jpg.rf.813fb5e903f6024ffa0ed11496a051ef.jpg",
+          "class": "tablier_ferme",
+          "score": 0.67
+        },
+        {
+          "image": "IMG_3461_jpg.rf.b2da2f8e2bbed37adc60ccc43ec8df54.jpg",
+          "class": "avec_gants",
+          "score": 0.654
+        },
+        {
+          "image": "IMG_3654_jpg.rf.7d849e80ab73e90a0a390c8824de5f6a.jpg",
+          "class": "sans_gants",
+          "score": 0.654
+        },
+        {
+          "image": "IMG_3767_jpg.rf.242c7ef8611ce23764fea367cf755ecb.jpg",
+          "class": "avec_gants",
+          "score": 0.653
+        },
+        {
+          "image": "IMG_3767_jpg.rf.242c7ef8611ce23764fea367cf755ecb.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.651
+        },
+        {
+          "image": "IMG_3607_jpg.rf.15df7300657f0093c3c78094548bb460.jpg",
+          "class": "tablier_ouvert",
+          "score": 0.647
+        },
+        {
+          "image": "IMG_3693_jpg.rf.9531d5fb5e15764237baa1dbe7dd36f4.jpg",
+          "class": "presence_cheveux",
+          "score": 0.646
+        },
+        {
+          "image": "IMG_3294-png_jpg.rf.71bceb3a056423e86b8eb9d4116f6d47.jpg",
+          "class": "avec_casque",
+          "score": 0.642
+        },
+        {
+          "image": "IMG_3593_jpg.rf.e5e8e4093155711affe99d91e2215a13.jpg",
+          "class": "presence_cheveux",
+          "score": 0.64
+        },
+        {
+          "image": "IMG_3294-png_jpg.rf.71bceb3a056423e86b8eb9d4116f6d47.jpg",
+          "class": "tablier_ferme",
+          "score": 0.636
+        },
+        {
+          "image": "IMG_3353_jpg.rf.9382b544d141a80ceef35247f6f8e021.jpg",
+          "class": "tablier_ferme",
+          "score": 0.635
+        },
+        {
+          "image": "IMG_3410_jpg.rf.8f0ec52e83ecf388b1c37da77f6c2cdd.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.631
+        },
+        {
+          "image": "IMG_3410_jpg.rf.8f0ec52e83ecf388b1c37da77f6c2cdd.jpg",
+          "class": "avec_gants",
+          "score": 0.62
+        },
+        {
+          "image": "IMG_3690_jpg.rf.fc22dc2e0fb5bfa558b52624aaf64a31.jpg",
+          "class": "tablier_ferme",
+          "score": 0.616
+        },
+        {
+          "image": "IMG_3612_jpg.rf.62051e793d455ec5e5e235f669721cd7.jpg",
+          "class": "avec_gants",
+          "score": 0.608
+        },
+        {
+          "image": "IMG_3672_jpg.rf.90b19a4009c3ca4d1ea802ca0a00d235.jpg",
+          "class": "avec_casque",
+          "score": 0.605
+        },
+        {
+          "image": "IMG_3410_jpg.rf.8f0ec52e83ecf388b1c37da77f6c2cdd.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.605
+        },
+        {
+          "image": "IMG_3760_jpg.rf.58648ae3a167901842aace0466edda92.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.591
+        },
+        {
+          "image": "IMG_3666_jpg.rf.afd43b60c42ce4836a9fc90a2ca16f38.jpg",
+          "class": "tablier_ferme",
+          "score": 0.589
+        },
+        {
+          "image": "IMG_3654_jpg.rf.7d849e80ab73e90a0a390c8824de5f6a.jpg",
+          "class": "tablier_ouvert",
+          "score": 0.588
+        },
+        {
+          "image": "IMG_3767_jpg.rf.242c7ef8611ce23764fea367cf755ecb.jpg",
+          "class": "tablier_ferme",
+          "score": 0.57
+        },
+        {
+          "image": "IMG_3690_jpg.rf.fc22dc2e0fb5bfa558b52624aaf64a31.jpg",
+          "class": "tablier_ferme",
+          "score": 0.568
+        },
+        {
+          "image": "IMG_3638_jpg.rf.d105e7e56354e067cacd6cf72c8b0ad8.jpg",
+          "class": "avec_gants",
+          "score": 0.567
+        },
+        {
+          "image": "IMG_3399_jpg.rf.52eb14b88c9248c12235718280037d4f.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.564
+        },
+        {
+          "image": "IMG_3689_jpg.rf.97281a6b53e05d167dcb1cade35eb7cc.jpg",
+          "class": "avec_gants",
+          "score": 0.561
+        },
+        {
+          "image": "IMG_3702_jpg.rf.2669d5522854e3e4362b555dd8e68d9b.jpg",
+          "class": "tablier_ferme",
+          "score": 0.558
+        },
+        {
+          "image": "IMG_3356_jpg.rf.51c3b6643bd378933bde3f2ee96fa39c.jpg",
+          "class": "tablier_ferme",
+          "score": 0.553
+        },
+        {
+          "image": "IMG_3320_jpg.rf.3929ae8b27fa8cf8cd04acd2d6e6a028.jpg",
+          "class": "avec_gants",
+          "score": 0.55
+        },
+        {
+          "image": "IMG_3493_jpg.rf.58f76bf6babf313c947ab915ffb253a4.jpg",
+          "class": "presence_accessoires",
+          "score": 0.549
+        },
+        {
+          "image": "IMG_3577_jpg.rf.9acf49180e5ba2a28577dbbd582a1529.jpg",
+          "class": "avec_gants",
+          "score": 0.544
+        },
+        {
+          "image": "IMG_3766_jpg.rf.cb5adf79ebed4c48323405192e6eecc3.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.543
+        },
+        {
+          "image": "IMG_3666_jpg.rf.afd43b60c42ce4836a9fc90a2ca16f38.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.54
+        },
+        {
+          "image": "IMG_3409_jpg.rf.654d6bef645fdb11f8388c04a71d0937.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.533
+        },
+        {
+          "image": "IMG_3605_jpg.rf.4de37b168a0443fb4194c47395be72ab.jpg",
+          "class": "presence_cheveux",
+          "score": 0.532
+        },
+        {
+          "image": "IMG_3326_jpg.rf.3e8dfd73fc8b1937fe5730ce2a1fdb04.jpg",
+          "class": "avec_casque",
+          "score": 0.531
+        },
+        {
+          "image": "IMG_3689_jpg.rf.97281a6b53e05d167dcb1cade35eb7cc.jpg",
+          "class": "avec_gants",
+          "score": 0.53
+        },
+        {
+          "image": "IMG_3451_jpg.rf.9871c59d977d54e16eb74b00d1c2b389.jpg",
+          "class": "avec_gants",
+          "score": 0.527
+        },
+        {
+          "image": "IMG_3320_jpg.rf.3929ae8b27fa8cf8cd04acd2d6e6a028.jpg",
+          "class": "avec_casque",
+          "score": 0.524
+        },
+        {
+          "image": "IMG_3414_jpg.rf.b05137c9cf1df6d83eb6713c24d343a4.jpg",
+          "class": "tablier_ferme",
+          "score": 0.522
+        },
+        {
+          "image": "IMG_3586_jpg.rf.4cf4ebf48360bd37958444699281d0e8.jpg",
+          "class": "sans_gants",
+          "score": 0.519
+        },
+        {
+          "image": "IMG_3387_jpg.rf.c20d6c6011e964eecd5891f631eb9f69.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.515
+        },
+        {
+          "image": "IMG_3561_jpg.rf.5f768a3fd15739c0bae481a43bcd5e3f.jpg",
+          "class": "sans_gants",
+          "score": 0.508
+        },
+        {
+          "image": "IMG_3762_jpg.rf.0b0ecaf4e55f93c2449b052e0a278a03.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.502
+        }
+      ],
+      "false_negatives": [
+        {
+          "image": "IMG_3294-png_jpg.rf.71bceb3a056423e86b8eb9d4116f6d47.jpg",
+          "class": "sans_casque"
+        },
+        {
+          "image": "IMG_3294-png_jpg.rf.71bceb3a056423e86b8eb9d4116f6d47.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3294-png_jpg.rf.71bceb3a056423e86b8eb9d4116f6d47.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3320_jpg.rf.3929ae8b27fa8cf8cd04acd2d6e6a028.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3326_jpg.rf.3e8dfd73fc8b1937fe5730ce2a1fdb04.jpg",
+          "class": "avec_casque"
+        },
+        {
+          "image": "IMG_3328_jpg.rf.c0d51cd1bee797d913c73fadb2581cd9.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3343_jpg.rf.9012113313504da459e6510d990a9d52.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3347_jpg.rf.c063975079c2070265059b3c48b9d9c4.jpg",
+          "class": "avec_casque"
+        },
+        {
+          "image": "IMG_3348_jpg.rf.51809b689882d7c6ad46125d48cef9c9.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3350_jpg.rf.ac86a931c7873b866487c501b9c708c6.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3350_jpg.rf.ac86a931c7873b866487c501b9c708c6.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3353_jpg.rf.9382b544d141a80ceef35247f6f8e021.jpg",
+          "class": "sans_casque"
+        },
+        {
+          "image": "IMG_3356_jpg.rf.51c3b6643bd378933bde3f2ee96fa39c.jpg",
+          "class": "presence_accessoires"
+        },
+        {
+          "image": "IMG_3360_jpg.rf.aeeb9bb90952bef4e6f460250c31caad.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3375_jpg.rf.73f06ba43fcbac47c50f4aa551053a13.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3382_jpg.rf.8a42deca355ed911b80e54db837e671e.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3382_jpg.rf.8a42deca355ed911b80e54db837e671e.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3385_jpg.rf.1b0aca81b958f1fc162ec03585bb2164.jpg",
+          "class": "avec_casque"
+        },
+        {
+          "image": "IMG_3385_jpg.rf.1b0aca81b958f1fc162ec03585bb2164.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3395_jpg.rf.8005fa8a53b5c862d01fb6137945151b.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3399_jpg.rf.52eb14b88c9248c12235718280037d4f.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3401_jpg.rf.e841421e896d8b5c20eedd341d7ffa87.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3406_jpg.rf.813fb5e903f6024ffa0ed11496a051ef.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3406_jpg.rf.813fb5e903f6024ffa0ed11496a051ef.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3406_jpg.rf.813fb5e903f6024ffa0ed11496a051ef.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3409_jpg.rf.654d6bef645fdb11f8388c04a71d0937.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3409_jpg.rf.654d6bef645fdb11f8388c04a71d0937.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3410_jpg.rf.8f0ec52e83ecf388b1c37da77f6c2cdd.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3414_jpg.rf.b05137c9cf1df6d83eb6713c24d343a4.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3414_jpg.rf.b05137c9cf1df6d83eb6713c24d343a4.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3418_jpg.rf.145a637ecf7777b6f911736998db4569.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3434_jpg.rf.59bbc83d898c0d89f2f9c9949ede7ba7.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3445_jpg.rf.3f1a606da84e06becc946d6b545b84a0.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3445_jpg.rf.3f1a606da84e06becc946d6b545b84a0.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3450_jpg.rf.a41010b49809e34f649a23ee3e6097e6.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3451_jpg.rf.9871c59d977d54e16eb74b00d1c2b389.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3451_jpg.rf.9871c59d977d54e16eb74b00d1c2b389.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3455_jpg.rf.dd49c1d876633af342dcf4c2b6bd5b30.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3457_jpg.rf.488be4f8d27f200643d42008c4602673.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3461_jpg.rf.b2da2f8e2bbed37adc60ccc43ec8df54.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3461_jpg.rf.b2da2f8e2bbed37adc60ccc43ec8df54.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3493_jpg.rf.58f76bf6babf313c947ab915ffb253a4.jpg",
+          "class": "avec_casque"
+        },
+        {
+          "image": "IMG_3493_jpg.rf.58f76bf6babf313c947ab915ffb253a4.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3494_jpg.rf.904c518c37aecae319950e29ab21b58c.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3527_jpg.rf.49d22a1483b2e9b1e8156a0bd8a7f151.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3527_jpg.rf.49d22a1483b2e9b1e8156a0bd8a7f151.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3539_jpg.rf.8b735a3bcf69875c4635eb13f2a3b06f.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3551_jpg.rf.d69623200450a055f92cc977ef8a1593.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3551_jpg.rf.d69623200450a055f92cc977ef8a1593.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3561_jpg.rf.5f768a3fd15739c0bae481a43bcd5e3f.jpg",
+          "class": "avec_casque"
+        },
+        {
+          "image": "IMG_3577_jpg.rf.9acf49180e5ba2a28577dbbd582a1529.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3579_jpg.rf.4e846508ebfe4e7fd0de79e027bd95f4.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3593_jpg.rf.e5e8e4093155711affe99d91e2215a13.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3593_jpg.rf.e5e8e4093155711affe99d91e2215a13.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3605_jpg.rf.4de37b168a0443fb4194c47395be72ab.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3605_jpg.rf.4de37b168a0443fb4194c47395be72ab.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3605_jpg.rf.4de37b168a0443fb4194c47395be72ab.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3605_jpg.rf.4de37b168a0443fb4194c47395be72ab.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3607_jpg.rf.15df7300657f0093c3c78094548bb460.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3607_jpg.rf.15df7300657f0093c3c78094548bb460.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3607_jpg.rf.15df7300657f0093c3c78094548bb460.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3607_jpg.rf.15df7300657f0093c3c78094548bb460.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3642_jpg.rf.1b5847221c35ea7e098a999abde9516f.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3654_jpg.rf.7d849e80ab73e90a0a390c8824de5f6a.jpg",
+          "class": "sans_casque"
+        },
+        {
+          "image": "IMG_3672_jpg.rf.90b19a4009c3ca4d1ea802ca0a00d235.jpg",
+          "class": "sans_casque"
+        },
+        {
+          "image": "IMG_3673_jpg.rf.6c87d8fbecbf88675db5ff592027a1f7.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3677_jpg.rf.089aafc7a0d528cc424da5c9d2c27ab0.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3677_jpg.rf.089aafc7a0d528cc424da5c9d2c27ab0.jpg",
+          "class": "sans_gants"
+        },
+        {
+          "image": "IMG_3681_jpg.rf.568008c01b0d44b671128edc64af2155.jpg",
+          "class": "chaussure_inadequat"
+        },
+        {
+          "image": "IMG_3681_jpg.rf.568008c01b0d44b671128edc64af2155.jpg",
+          "class": "chaussure_inadequat"
+        },
+        {
+          "image": "IMG_3689_jpg.rf.97281a6b53e05d167dcb1cade35eb7cc.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3689_jpg.rf.97281a6b53e05d167dcb1cade35eb7cc.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3689_jpg.rf.97281a6b53e05d167dcb1cade35eb7cc.jpg",
+          "class": "chaussure_inadequat"
+        },
+        {
+          "image": "IMG_3690_jpg.rf.fc22dc2e0fb5bfa558b52624aaf64a31.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3693_jpg.rf.9531d5fb5e15764237baa1dbe7dd36f4.jpg",
+          "class": "chaussure_inadequat"
+        },
+        {
+          "image": "IMG_3702_jpg.rf.2669d5522854e3e4362b555dd8e68d9b.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3702_jpg.rf.2669d5522854e3e4362b555dd8e68d9b.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3709_jpg.rf.63ef89312e706e7c700a9ec839fa3509.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3709_jpg.rf.63ef89312e706e7c700a9ec839fa3509.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3734_jpg.rf.3156661dc61ea8ce44d770256a669d7d.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3742_jpg.rf.703ccf38e1bc12896417920779a9a525.jpg",
+          "class": "sans_tablier"
+        },
+        {
+          "image": "IMG_3753_jpg.rf.b050a0b17b4564bbd6b56c74b79e00eb.jpg",
+          "class": "sans_gants"
+        },
+        {
+          "image": "IMG_3760_jpg.rf.58648ae3a167901842aace0466edda92.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3762_jpg.rf.0b0ecaf4e55f93c2449b052e0a278a03.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3764_jpg.rf.7c6368fde377ca30f83a54bb2efcb47e.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3764_jpg.rf.7c6368fde377ca30f83a54bb2efcb47e.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3764_jpg.rf.7c6368fde377ca30f83a54bb2efcb47e.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3764_jpg.rf.7c6368fde377ca30f83a54bb2efcb47e.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3766_jpg.rf.cb5adf79ebed4c48323405192e6eecc3.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3767_jpg.rf.242c7ef8611ce23764fea367cf755ecb.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3767_jpg.rf.242c7ef8611ce23764fea367cf755ecb.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3772_jpg.rf.7708ae0ce6bd46a8be97e30c09d0a418.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3772_jpg.rf.7708ae0ce6bd46a8be97e30c09d0a418.jpg",
+          "class": "tablier_ferme"
+        }
+      ],
+      "decisions": {
+        "anomaly -> anomaly": 32,
+        "anomaly -> incomplete": 7,
+        "anomaly -> no_anomaly": 1,
+        "incomplete -> anomaly": 2,
+        "incomplete -> incomplete": 42,
+        "incomplete -> no_anomaly": 2,
+        "no_anomaly -> anomaly": 1,
+        "no_anomaly -> incomplete": 3,
+        "no_anomaly -> no_anomaly": 3
+      },
+      "persons_per_image": {
+        "0": 3,
+        "1": 75,
+        "2": 13,
+        "3": 1,
+        "4": 1
+      },
+      "plots": [
+        "BoxF1_curve.png",
+        "BoxPR_curve.png",
+        "BoxP_curve.png",
+        "BoxR_curve.png",
+        "confusion_matrix.png",
+        "confusion_matrix_normalized.png"
+      ]
+    },
+    "test": {
+      "images": 47,
+      "metrics": {
+        "precision": 0.8566820258430975,
+        "recall": 0.707019259636032,
+        "mAP50": 0.8093509617669908,
+        "mAP50_95": 0.3959660259578358
+      },
+      "per_class": {
+        "avec_casque": {
+          "precision": 0.937567830930725,
+          "recall": 0.9736842105263158,
+          "mAP50": 0.9536698717948718,
+          "mAP50_95": 0.5580985558360558
+        },
+        "avec_gants": {
+          "precision": 0.7434671318209881,
+          "recall": 0.7454545454545455,
+          "mAP50": 0.7004788264054023,
+          "mAP50_95": 0.2725407919008382
+        },
+        "chaussure_adequat": {
+          "precision": 0.68952554719394,
+          "recall": 0.6571428571428571,
+          "mAP50": 0.6299248886975822,
+          "mAP50_95": 0.3040625695650733
+        },
+        "chaussure_inadequat": {
+          "precision": 0.7510378683633108,
+          "recall": 0.625,
+          "mAP50": 0.6947126436781609,
+          "mAP50_95": 0.33243141762452105
+        },
+        "presence_accessoires": {
+          "precision": 1.0,
+          "recall": 0.0,
+          "mAP50": 0.5344736842105263,
+          "mAP50_95": 0.29126102418207683
+        },
+        "presence_cheveux": {
+          "precision": 1.0,
+          "recall": 0.7961281569678932,
+          "mAP50": 0.9616666666666666,
+          "mAP50_95": 0.4933357142857142
+        },
+        "sans_casque": {
+          "precision": 1.0,
+          "recall": 0.8599765704645321,
+          "mAP50": 0.905,
+          "mAP50_95": 0.5070178571428572
+        },
+        "sans_gants": {
+          "precision": 0.9518138964417991,
+          "recall": 0.8,
+          "mAP50": 0.8976515151515152,
+          "mAP50_95": 0.3787667748917749
+        },
+        "sans_tablier": {
+          "precision": 0.6801470415025723,
+          "recall": 1.0,
+          "mAP50": 0.995,
+          "mAP50_95": 0.49749999999999994
+        },
+        "tablier_ferme": {
+          "precision": 0.7217897819114516,
+          "recall": 0.605539801154493,
+          "mAP50": 0.7371006646503564,
+          "mAP50_95": 0.3318460298680483
+        },
+        "tablier_ouvert": {
+          "precision": 0.9481531861092833,
+          "recall": 0.7142857142857143,
+          "mAP50": 0.893181818181818,
+          "mAP50_95": 0.3887655502392344
+        }
+      },
+      "support_instances": {
+        "avec_casque": 38,
+        "tablier_ferme": 30,
+        "avec_gants": 55,
+        "chaussure_adequat": 35,
+        "sans_casque": 11,
+        "presence_accessoires": 4,
+        "tablier_ouvert": 7,
+        "sans_gants": 10,
+        "presence_cheveux": 5,
+        "chaussure_inadequat": 8,
+        "sans_tablier": 1
+      },
+      "support_images": {
+        "avec_casque": 37,
+        "tablier_ferme": 30,
+        "chaussure_adequat": 24,
+        "avec_gants": 39,
+        "sans_casque": 11,
+        "presence_accessoires": 4,
+        "tablier_ouvert": 7,
+        "sans_gants": 8,
+        "presence_cheveux": 3,
+        "chaussure_inadequat": 4,
+        "sans_tablier": 1
+      },
+      "at_app_threshold": {
+        "avec_casque": {
+          "tp": 35,
+          "fp": 3,
+          "fn": 3,
+          "precision": 0.9210526315789473,
+          "recall": 0.9210526315789473
+        },
+        "avec_gants": {
+          "tp": 37,
+          "fp": 13,
+          "fn": 18,
+          "precision": 0.74,
+          "recall": 0.6727272727272727
+        },
+        "chaussure_adequat": {
+          "tp": 18,
+          "fp": 8,
+          "fn": 17,
+          "precision": 0.6923076923076923,
+          "recall": 0.5142857142857142
+        },
+        "chaussure_inadequat": {
+          "tp": 4,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8,
+          "recall": 0.5
+        },
+        "presence_accessoires": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "precision": null,
+          "recall": 0.0
+        },
+        "presence_cheveux": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.6
+        },
+        "sans_casque": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.8181818181818182
+        },
+        "sans_gants": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.8
+        },
+        "sans_tablier": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "tablier_ferme": {
+          "tp": 18,
+          "fp": 5,
+          "fn": 12,
+          "precision": 0.782608695652174,
+          "recall": 0.6
+        },
+        "tablier_ouvert": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.2857142857142857
+        }
+      },
+      "false_positives": [
+        {
+          "image": "IMG_3624_jpg.rf.060416bca2cad8a857dd3e1aaf452cd1.jpg",
+          "class": "tablier_ferme",
+          "score": 0.872
+        },
+        {
+          "image": "IMG_3433_jpg.rf.e7ee58a32539ee04d17137b1453153d7.jpg",
+          "class": "avec_gants",
+          "score": 0.819
+        },
+        {
+          "image": "IMG_3501_jpg.rf.896f119f5ffa56fd287184fc71065080.jpg",
+          "class": "avec_casque",
+          "score": 0.818
+        },
+        {
+          "image": "IMG_3420_jpg.rf.7255b709f31757a544bcfed985820c68.jpg",
+          "class": "avec_gants",
+          "score": 0.802
+        },
+        {
+          "image": "IMG_3389_jpg.rf.ace3b78eca89f3ed85f44e8f12511f6d.jpg",
+          "class": "avec_gants",
+          "score": 0.8
+        },
+        {
+          "image": "IMG_3404_jpg.rf.6f3fc61c733f946f096120d84a98bf97.jpg",
+          "class": "avec_casque",
+          "score": 0.795
+        },
+        {
+          "image": "IMG_3404_jpg.rf.6f3fc61c733f946f096120d84a98bf97.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.777
+        },
+        {
+          "image": "IMG_3359_jpg.rf.881ba5d5201cff6aaa941b698686050f.jpg",
+          "class": "avec_gants",
+          "score": 0.759
+        },
+        {
+          "image": "IMG_3417_jpg.rf.508f22fc9e13a85ade983357ad0977ee.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.755
+        },
+        {
+          "image": "IMG_3359_jpg.rf.881ba5d5201cff6aaa941b698686050f.jpg",
+          "class": "avec_gants",
+          "score": 0.748
+        },
+        {
+          "image": "IMG_3490_jpg.rf.d136b5d4347f1eb3feb1296f2a6fb3fb.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.742
+        },
+        {
+          "image": "IMG_3398_jpg.rf.62e48d263c87d3f7a19b5d1253cd5a60.jpg",
+          "class": "avec_gants",
+          "score": 0.741
+        },
+        {
+          "image": "IMG_3668_jpg.rf.e8fcb24572afce3aa5bc39680c2d2a33.jpg",
+          "class": "avec_gants",
+          "score": 0.724
+        },
+        {
+          "image": "IMG_3490_jpg.rf.d136b5d4347f1eb3feb1296f2a6fb3fb.jpg",
+          "class": "avec_gants",
+          "score": 0.713
+        },
+        {
+          "image": "IMG_3597_jpg.rf.e9225fdda566efea88fa4a5f6cbd9f74.jpg",
+          "class": "avec_casque",
+          "score": 0.711
+        },
+        {
+          "image": "IMG_3417_jpg.rf.508f22fc9e13a85ade983357ad0977ee.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.708
+        },
+        {
+          "image": "IMG_3490_jpg.rf.d136b5d4347f1eb3feb1296f2a6fb3fb.jpg",
+          "class": "avec_gants",
+          "score": 0.701
+        },
+        {
+          "image": "IMG_3698_jpg.rf.4d4f7cd9bb862d2c7f2a32e9a64d6349.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.687
+        },
+        {
+          "image": "IMG_3688_jpg.rf.d72f72d9786eaa38e8efb61477f3f00e.jpg",
+          "class": "chaussure_inadequat",
+          "score": 0.682
+        },
+        {
+          "image": "IMG_3669_jpg.rf.bdcea9672aa7fe9908e9bf287cbd9b92.jpg",
+          "class": "avec_gants",
+          "score": 0.664
+        },
+        {
+          "image": "IMG_3420_jpg.rf.7255b709f31757a544bcfed985820c68.jpg",
+          "class": "avec_gants",
+          "score": 0.651
+        },
+        {
+          "image": "IMG_3698_jpg.rf.4d4f7cd9bb862d2c7f2a32e9a64d6349.jpg",
+          "class": "tablier_ferme",
+          "score": 0.62
+        },
+        {
+          "image": "IMG_3490_jpg.rf.d136b5d4347f1eb3feb1296f2a6fb3fb.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.619
+        },
+        {
+          "image": "IMG_3443_jpg.rf.a465199ec7540077167d46535cd124dc.jpg",
+          "class": "avec_gants",
+          "score": 0.583
+        },
+        {
+          "image": "IMG_3501_jpg.rf.896f119f5ffa56fd287184fc71065080.jpg",
+          "class": "tablier_ferme",
+          "score": 0.582
+        },
+        {
+          "image": "IMG_3486_jpg.rf.1d42fd0f395fdc02d6e621ecdd86006b.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.567
+        },
+        {
+          "image": "IMG_3675_jpg.rf.2b48ddad1b75fb9f51dfbcd740d20253.jpg",
+          "class": "tablier_ferme",
+          "score": 0.559
+        },
+        {
+          "image": "IMG_3503_jpg.rf.4d1d1722ad20a8809f20efef7dbab38b.jpg",
+          "class": "avec_gants",
+          "score": 0.527
+        },
+        {
+          "image": "IMG_3615_jpg.rf.80406f779cf0aa1642d1f37907d7223d.jpg",
+          "class": "tablier_ferme",
+          "score": 0.521
+        },
+        {
+          "image": "IMG_3715_jpg.rf.f96f2aeac1e0ea13cba4b439222cec4e.jpg",
+          "class": "chaussure_adequat",
+          "score": 0.515
+        }
+      ],
+      "false_negatives": [
+        {
+          "image": "IMG_3299_jpg.rf.b468cf70638df50626c2e091f36a175a.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3299_jpg.rf.b468cf70638df50626c2e091f36a175a.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3299_jpg.rf.b468cf70638df50626c2e091f36a175a.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3307_jpg.rf.57fc38252ba8dfb1e4313aad9ab8293c.jpg",
+          "class": "avec_casque"
+        },
+        {
+          "image": "IMG_3349_jpg.rf.0d4ca07ff560504becaa566709a67283.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3359_jpg.rf.881ba5d5201cff6aaa941b698686050f.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3398_jpg.rf.62e48d263c87d3f7a19b5d1253cd5a60.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3398_jpg.rf.62e48d263c87d3f7a19b5d1253cd5a60.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3398_jpg.rf.62e48d263c87d3f7a19b5d1253cd5a60.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3404_jpg.rf.6f3fc61c733f946f096120d84a98bf97.jpg",
+          "class": "sans_casque"
+        },
+        {
+          "image": "IMG_3404_jpg.rf.6f3fc61c733f946f096120d84a98bf97.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3404_jpg.rf.6f3fc61c733f946f096120d84a98bf97.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3417_jpg.rf.508f22fc9e13a85ade983357ad0977ee.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3417_jpg.rf.508f22fc9e13a85ade983357ad0977ee.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3420_jpg.rf.7255b709f31757a544bcfed985820c68.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3420_jpg.rf.7255b709f31757a544bcfed985820c68.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3420_jpg.rf.7255b709f31757a544bcfed985820c68.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3433_jpg.rf.e7ee58a32539ee04d17137b1453153d7.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3433_jpg.rf.e7ee58a32539ee04d17137b1453153d7.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3440_jpg.rf.3d3eb4f080d492ae92168164bfa241e8.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3440_jpg.rf.3d3eb4f080d492ae92168164bfa241e8.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3443_jpg.rf.a465199ec7540077167d46535cd124dc.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3443_jpg.rf.a465199ec7540077167d46535cd124dc.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3464_jpg.rf.ecaec9a590606d5694ca979f14e785d9.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3485_jpg.rf.c27c8ef7db807c20e9323db6f0f281c1.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3486_jpg.rf.1d42fd0f395fdc02d6e621ecdd86006b.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3486_jpg.rf.1d42fd0f395fdc02d6e621ecdd86006b.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3490_jpg.rf.d136b5d4347f1eb3feb1296f2a6fb3fb.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3490_jpg.rf.d136b5d4347f1eb3feb1296f2a6fb3fb.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3501_jpg.rf.896f119f5ffa56fd287184fc71065080.jpg",
+          "class": "avec_casque"
+        },
+        {
+          "image": "IMG_3501_jpg.rf.896f119f5ffa56fd287184fc71065080.jpg",
+          "class": "presence_accessoires"
+        },
+        {
+          "image": "IMG_3501_jpg.rf.896f119f5ffa56fd287184fc71065080.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3503_jpg.rf.4d1d1722ad20a8809f20efef7dbab38b.jpg",
+          "class": "presence_accessoires"
+        },
+        {
+          "image": "IMG_3503_jpg.rf.4d1d1722ad20a8809f20efef7dbab38b.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3503_jpg.rf.4d1d1722ad20a8809f20efef7dbab38b.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3503_jpg.rf.4d1d1722ad20a8809f20efef7dbab38b.jpg",
+          "class": "avec_casque"
+        },
+        {
+          "image": "IMG_3508_jpg.rf.fac6e5e835ff0fe88ff581124728d9d2.jpg",
+          "class": "presence_accessoires"
+        },
+        {
+          "image": "IMG_3508_jpg.rf.fac6e5e835ff0fe88ff581124728d9d2.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3508_jpg.rf.fac6e5e835ff0fe88ff581124728d9d2.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3516_jpg.rf.c3068c990a80ee359ef694bf642160ec.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3517_jpg.rf.e982045995b24ae8bedf1bef1bd95deb.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3543_jpg.rf.04027548d6f75a44141257a269e8678e.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3543_jpg.rf.04027548d6f75a44141257a269e8678e.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3544_jpg.rf.a28e34a316f38c0957b0d8b57a1dcb6a.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3599_jpg.rf.4b0b492379bc868baaa0030cb8cafb4a.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3624_jpg.rf.060416bca2cad8a857dd3e1aaf452cd1.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3624_jpg.rf.060416bca2cad8a857dd3e1aaf452cd1.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3639_jpg.rf.e4caefaabe364cb4f19e35a9b8e5186b.jpg",
+          "class": "presence_accessoires"
+        },
+        {
+          "image": "IMG_3639_jpg.rf.e4caefaabe364cb4f19e35a9b8e5186b.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3668_jpg.rf.e8fcb24572afce3aa5bc39680c2d2a33.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3668_jpg.rf.e8fcb24572afce3aa5bc39680c2d2a33.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3669_jpg.rf.bdcea9672aa7fe9908e9bf287cbd9b92.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3669_jpg.rf.bdcea9672aa7fe9908e9bf287cbd9b92.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3674_jpg.rf.1241fa40d162bc05d93dc7c8b57aa8ea.jpg",
+          "class": "sans_casque"
+        },
+        {
+          "image": "IMG_3674_jpg.rf.1241fa40d162bc05d93dc7c8b57aa8ea.jpg",
+          "class": "avec_gants"
+        },
+        {
+          "image": "IMG_3674_jpg.rf.1241fa40d162bc05d93dc7c8b57aa8ea.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3674_jpg.rf.1241fa40d162bc05d93dc7c8b57aa8ea.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3675_jpg.rf.2b48ddad1b75fb9f51dfbcd740d20253.jpg",
+          "class": "presence_cheveux"
+        },
+        {
+          "image": "IMG_3675_jpg.rf.2b48ddad1b75fb9f51dfbcd740d20253.jpg",
+          "class": "tablier_ferme"
+        },
+        {
+          "image": "IMG_3675_jpg.rf.2b48ddad1b75fb9f51dfbcd740d20253.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3675_jpg.rf.2b48ddad1b75fb9f51dfbcd740d20253.jpg",
+          "class": "sans_gants"
+        },
+        {
+          "image": "IMG_3684_jpg.rf.5e53520c33daeaf6c610bf090261a957.jpg",
+          "class": "chaussure_inadequat"
+        },
+        {
+          "image": "IMG_3684_jpg.rf.5e53520c33daeaf6c610bf090261a957.jpg",
+          "class": "chaussure_inadequat"
+        },
+        {
+          "image": "IMG_3688_jpg.rf.d72f72d9786eaa38e8efb61477f3f00e.jpg",
+          "class": "chaussure_inadequat"
+        },
+        {
+          "image": "IMG_3688_jpg.rf.d72f72d9786eaa38e8efb61477f3f00e.jpg",
+          "class": "chaussure_inadequat"
+        },
+        {
+          "image": "IMG_3696_jpg.rf.2fb7a53312f69892e0f10113ca573dec.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3698_jpg.rf.4d4f7cd9bb862d2c7f2a32e9a64d6349.jpg",
+          "class": "tablier_ouvert"
+        },
+        {
+          "image": "IMG_3698_jpg.rf.4d4f7cd9bb862d2c7f2a32e9a64d6349.jpg",
+          "class": "chaussure_adequat"
+        },
+        {
+          "image": "IMG_3715_jpg.rf.f96f2aeac1e0ea13cba4b439222cec4e.jpg",
+          "class": "sans_gants"
+        }
+      ],
+      "decisions": {
+        "anomaly -> anomaly": 13,
+        "anomaly -> incomplete": 8,
+        "incomplete -> incomplete": 15,
+        "incomplete -> no_anomaly": 1,
+        "no_anomaly -> incomplete": 9,
+        "no_anomaly -> no_anomaly": 1
+      },
+      "persons_per_image": {
+        "0": 1,
+        "1": 39,
+        "2": 5,
+        "3": 2
+      },
+      "plots": [
+        "BoxF1_curve.png",
+        "BoxPR_curve.png",
+        "BoxP_curve.png",
+        "BoxR_curve.png",
+        "confusion_matrix.png",
+        "confusion_matrix_normalized.png"
+      ]
+    }
+  }
+}

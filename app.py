@@ -27,8 +27,9 @@ st.markdown(
 )
 
 st.title("🦺 Ergonomie 4.0")
-st.caption("PPE compliance and posture monitoring for welding workshops — "
-           "YOLOv8 detects protective equipment, MediaPipe evaluates the operator's posture.")
+st.caption("Prototype for PPE detection and exploratory posture indicators in a welding "
+           "workshop — YOLOv8 detects protective equipment, MediaPipe estimates the pose. "
+           "Decision support only: not a certified safety or ergonomic assessment.")
 
 # ------------------------------------------------------------------ Sidebar
 st.sidebar.header("⚙️ Analysis")
@@ -36,24 +37,40 @@ analysis = st.sidebar.radio("What to analyse", ("PPE detection", "Posture", "PPE
 use_ppe = analysis != "Posture"
 use_posture = analysis != "PPE detection"
 
-confidence = st.sidebar.slider("Detection confidence", 25, 100, 50,
-                               help="Minimum confidence for a PPE detection to be kept.") / 100
+confidence = st.sidebar.slider(
+    "Decision threshold (detector score)", 30, 95,
+    int(settings.DEFAULT_DECISION_CONFIDENCE * 100), step=5,
+    help="Detections at or above this score count as confirmed evidence; detections between "
+         f"{settings.UNCERTAIN_CONFIDENCE:.2f} and this value are reported as uncertain. "
+         "A detector score is not a probability of compliance.") / 100
 
-model = None
-if use_ppe:
+
+def load_models():
     try:
-        model = helper.load_model(settings.DETECTION_MODEL)
+        ppe_model = helper.load_model(settings.DETECTION_MODEL) if use_ppe else None
     except Exception as ex:  # noqa: BLE001 - show any loading error to the user
-        st.error(f"Unable to load the model at {settings.DETECTION_MODEL}: {ex}")
+        st.error(f"Unable to load the PPE model `{settings.DETECTION_MODEL.name}`: {ex}")
         st.stop()
+    try:
+        person_model = helper.load_person_model(settings.PERSON_MODEL)
+    except Exception as ex:  # noqa: BLE001
+        st.warning(f"Person counter unavailable ({ex}): the number of operators cannot be "
+                   "checked, so PPE evaluations will stay incomplete.")
+        person_model = None
+    return ppe_model, person_model
+
+
+PPE_MODEL, PERSON_MODEL = load_models()
 
 st.sidebar.header("📷 Source")
 source = st.sidebar.radio("Select source", settings.SOURCES_LIST)
 
 
 def processor_factory(tracker=None, static_image=False, max_side=720):
-    return helper.FrameProcessor(model, confidence, use_ppe, use_posture, tracker,
-                                 static_image=static_image, max_side=max_side)
+    # Tracking stores state inside the model: give each run its own instance.
+    ppe_model = helper.new_model(settings.DETECTION_MODEL) if (use_ppe and tracker) else PPE_MODEL
+    return helper.FrameProcessor(ppe_model, PERSON_MODEL, confidence, use_ppe, use_posture,
+                                 tracker, static_image=static_image, max_side=max_side)
 
 
 def show_welcome():
@@ -61,13 +78,14 @@ def show_welcome():
     c1, c2, c3 = st.columns(3)
     with c1.container(border=True):
         st.markdown("#### 🦺 PPE detection\nHelmet, gloves, apron, safety shoes, "
-                    "plus hazards such as loose hair or jewellery.")
+                    "plus hazards such as uncovered hair or jewellery.")
     with c2.container(border=True):
-        st.markdown("#### ✅ Compliance check\nEach required item is reported as "
-                    "**worn**, **missing** or **not visible**.")
+        st.markdown("#### ✅ Checklist for one operator\nEach required item is **worn**, "
+                    "**missing**, **uncertain** or **not observed**. Nothing is assumed "
+                    "from a missing detection.")
     with c3.container(border=True):
-        st.markdown("#### 🧍 Posture\nTrunk, neck and knee angles rated with "
-                    "RULA-inspired thresholds.")
+        st.markdown("#### 🧍 Posture indicators\nTrunk inclination, neck, hip and knee "
+                    "flexion with exploratory, configurable thresholds.")
 
     st.subheader("Example")
     left, right = st.columns(2)
@@ -86,7 +104,11 @@ if source == settings.IMAGE:
     if uploaded is None:
         show_welcome()
     else:
-        image = Image.open(uploaded).convert("RGB")
+        try:
+            image = Image.open(uploaded).convert("RGB")
+        except Exception as ex:  # noqa: BLE001 - corrupted or unsupported file
+            st.error(f"Unable to read this image: {ex}")
+            st.stop()
         image.thumbnail((1280, 1280))
         analyse = st.sidebar.button("Analyse image", type="primary")
 
@@ -97,20 +119,23 @@ if source == settings.IMAGE:
             col2.info("Click **Analyse image** in the sidebar.", icon="👈")
         else:
             processor = processor_factory(static_image=True, max_side=1280)
-            frame, ppe, posture = processor(np.array(image)[:, :, ::-1].copy())
-            processor.close()
-            col2.image(frame, channels="BGR", caption="Result", use_column_width=True)
+            try:
+                frame, report, assessment, n_persons = processor(
+                    np.array(image)[:, :, ::-1].copy())
+            finally:
+                processor.close()
+            col2.image(frame, channels="BGR", caption="Result (confirmed detections only)",
+                       use_column_width=True)
 
-            reports = [r for r in (use_ppe, use_posture) if r]
-            cols = st.columns(len(reports))
+            cols = st.columns(int(use_ppe) + int(use_posture))
             i = 0
             if use_ppe:
-                cols[i].subheader("PPE compliance")
-                helper.show_ppe_report(cols[i], ppe)
+                cols[i].subheader("PPE checklist")
+                helper.show_ppe_report(cols[i], report)
                 i += 1
             if use_posture:
-                cols[i].subheader("Posture")
-                helper.show_posture_report(cols[i], posture)
+                cols[i].subheader("Posture indicators")
+                helper.show_posture_report(cols[i], assessment, n_persons)
 
 # ------------------------------------------------------------ Video sources
 elif source == settings.VIDEO:

@@ -1,0 +1,27 @@
+Ergonomie 4.0 — third-party notices
+
+This project is distributed under the GNU Affero General Public License v3.0
+(see LICENSE), because it depends on and ships weights produced with
+Ultralytics YOLOv8 (AGPL-3.0).
+
+Portions of the Streamlit interface (app.py, helper.py, settings.py) were
+adapted from:
+  CodingMantras/yolov8-streamlit-detection-tracking
+  https://github.com/CodingMantras/yolov8-streamlit-detection-tracking
+  Licensed under the Apache License, Version 2.0.
+  Apache-2.0 code may be incorporated in an AGPL-3.0 work; the original
+  license applies to those portions.
+
+Model weights
+  weights/best.pt    PPE detector trained by the authors with Ultralytics
+                     YOLOv8 on the soudage_ia dataset (AGPL-3.0, Ultralytics).
+  weights/yolov8n.pt COCO-pretrained YOLOv8n by Ultralytics (AGPL-3.0), used
+                     only to count people.
+
+Libraries (not redistributed): Ultralytics (AGPL-3.0), MediaPipe
+(Apache-2.0), Streamlit (Apache-2.0), OpenCV (Apache-2.0), PyTorch (BSD-3).
+
+Dataset
+  soudage_ia v2, photos taken by the authors in the ENSAM Meknès welding
+  workshop and annotated on Roboflow (private project). The dataset images
+  are NOT distributed with this repository.

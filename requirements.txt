@@ -4,6 +4,7 @@ streamlit>=1.30,<1.40
 # 0.10.14 is the last release that ships the mp.solutions.pose API used here
 mediapipe==0.10.14
 opencv-python>=4.8
+# required by Ultralytics for object tracking (ByteTrack / BoT-SORT)
+lap>=0.5.12
 numpy>=1.23,<2
-pandas>=1.5
 Pillow>=9.5
