@@ -1,0 +1,24 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit-tests:
+    # decision rules (ppe.py) and posture geometry (posture.py) only:
+    # no model weights, dataset, Ultralytics or MediaPipe are needed
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install "numpy>=1.23,<2" opencv-python-headless pytest
+      - run: pytest -v

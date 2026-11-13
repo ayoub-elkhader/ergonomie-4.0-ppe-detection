@@ -2,6 +2,8 @@
 
 **Computer-vision prototype for PPE detection and exploratory posture indicators in a welding workshop.**
 
+[![tests](https://github.com/ayoub-elkhader/ergonomie-4.0-ppe-detection/actions/workflows/tests.yml/badge.svg)](https://github.com/ayoub-elkhader/ergonomie-4.0-ppe-detection/actions/workflows/tests.yml)
+
 Academic project — ENSAM Meknès (Moulay Ismail University), Industrial Engineering.
 
 > The dataset class names are in French, as annotated (e.g. `avec_casque` = helmet
@@ -156,7 +158,7 @@ streamlit run app.py
 | Task | Command |
 |---|---|
 | Demo app | `streamlit run app.py` |
-| Unit tests | `pip install -r requirements-dev.txt` then `pytest` |
+| Unit tests | `pip install -r requirements-dev.txt` then `pytest` (CI runs them on Python 3.10–3.12 with only numpy, OpenCV and pytest) |
 | Dataset audit | `python scripts/audit_dataset.py` → `reports/dataset_audit.md` |
 | Evaluation | `python scripts/evaluate.py --splits val test` → `reports/evaluation/` |
 | Speed benchmark | `python scripts/benchmark.py` → `reports/benchmark.md` |
